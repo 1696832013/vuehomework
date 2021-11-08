@@ -147,6 +147,22 @@ export const asyncRoutes = [
     ]
   },
   {
+    path: '/rendless',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'rendless',
+        component: () => import('@/views/rendless/index'),
+        meta: {
+          title: 'rendless',
+          icon: 'form',
+          roles: ['admin']
+        }
+      }
+    ]
+  },
+  {
     path: '/permission',
     component: Layout,
     redirect: '/permission/page',
