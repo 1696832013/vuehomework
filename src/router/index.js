@@ -108,18 +108,7 @@ export const constantRoutes = [
       }
     ]
   },
-  {
-    path: '/test',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'test',
-        component: () => import('@/views/test/index'),
-        meta: { title: 'Test', icon: 'form' }
-      }
-    ]
-  },
+
   {
     path: '/profile',
     component: Layout,
@@ -141,6 +130,22 @@ export const constantRoutes = [
  * the routes that need to be dynamically loaded based on user roles
  */
 export const asyncRoutes = [
+  {
+    path: '/test',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'test',
+        component: () => import('@/views/test/index'),
+        meta: {
+          title: 'Test',
+          icon: 'form',
+          roles: ['editor']
+        }
+      }
+    ]
+  },
   {
     path: '/permission',
     component: Layout,
